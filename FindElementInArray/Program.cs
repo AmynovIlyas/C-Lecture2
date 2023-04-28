@@ -3,7 +3,7 @@ int[] array = { 21, 12, 34, 24, 15, 62, 17, 15, 28 };
 
 int n = array.Length; // array.Length сообщает о количестве элементов в массиве
 Console.Write("Введите число: ");
-int find = int.Parse(Console.ReadLine());
+int find = int.Parse(Console.ReadLine()!);
 
 int i = 0;
 while (i < n)
