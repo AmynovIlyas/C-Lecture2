@@ -6,30 +6,33 @@
     {
         collection[index] = new Random().Next(1, 10);
         index++;
-    }
+    }   
 }
 
 void PrintArray(int[] col)
 {
     int count = col.Length;
     int position = 0;
-    while (position < count)
+    Console.Write("{");
+    while (position < count-1)
     {
-        Console.WriteLine(col[position]);
+        Console.Write($"{col[position]}, ");
         position++;
     }
+    Console.Write($"{col[position]}");
+    Console.Write("}");
 }
 
-int IndexOf(int[] collection, int find)
+string IndexOf(int[] collection, int find)
 {
     int count = collection.Length;
     int index = 0;
-    int position = -1; // -1 вводится для того, чтобы в случае отсутствия в массиве элемента со значением find, на выходе не выдавался индекс 0 (соответствующий первому элементу массива)
+    string position = "такого элемента нет"; // -1 вводится для того, чтобы в случае отсутствия в массиве элемента со значением find, на выходе не выдавался индекс 0 (соответствующий первому элементу массива)
     while (index < count)
     {
         if (collection[index] == find)
         {
-            position = index;
+            position = index.ToString();
             break;
         }
         index++;
@@ -43,5 +46,5 @@ FillArray(array); // данный метод заполняет массив
 PrintArray(array); // данный метод выводит заполненный массив
 Console.WriteLine();
 
-int pos = IndexOf(array, 4);
+string pos = IndexOf(array, 4);
 Console.WriteLine(pos);
